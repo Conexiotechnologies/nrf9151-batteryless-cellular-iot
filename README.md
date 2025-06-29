@@ -16,6 +16,23 @@ Golioth features implemented in basic form.
 * Golioth account and credentials
 * Network connectivity
 
+## Hardware and Components
+
+* Conexio Stratus Pro [nRF9151](https://conexiotech.com/shop/) or nRF9161
+* Super capacitor, [LIB1620Q4R0407, 4V, 400F](https://www.digikey.com/en/products/detail/cda-zhifengwei-technology/LIB1620Q4R0407/22461729?s=N4IgTCBcDaICwDYAcSC0AZAkgIQIwLAAYBFOAJULkIHZUA5AERAF0BfIA)
+* Rakwireless [Unify Enclosure with solar panel](https://store.rakwireless.com/products/unify-enclosure-ip67-150x100x45mm-with-pre-mounted-m8-5-pin-and-rp-sma-antenna-ip-rated-connectors?index=9&variant=42861623738566)
+* LTE antenna
+
+## System Overview Block Diagram
+
+![System Setup](setup/solaris%20block%20diagram.png)
+
+
+![System Electronics](setup/electronis.jpg)
+
+
+![System Electronics](setup/enclosure.jpg)
+
 ## Installing the nRF Connect SDK v2.9.0
 
 * Download and install a cross-platform tool [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop) for your operating system.
@@ -116,13 +133,14 @@ conexio_stratus_pro/nrf9151/ns
 
 ### Setting DFU Mode (Device Firmware Upgrade)
 
-To program the device via USB, you will need to put the device into DFU (Device Firmware Upgrade) mode first. This mode triggers the onboard bootloader that accepts firmware binary files. To enter DFU mode:
+To program the device via USB, you will need to put the device into DFU (Device Firmware Upgrade) mode first. 
+This mode triggers the onboard bootloader that accepts firmware binary files. To enter DFU mode:
 
-1) Hold down Mode button : **M**
-2) Press and release Reset button : **R**
-3) Release only the RESET/R button, while holding down the MODE/M button
+1) Hold down Mode button : labeled **BUTTON**
+2) Press and release Reset button : **RESET**
+3) Release only the RESET button, while holding down the MODE button
 4) Wait for the white LED to turn on (steady-state)
-5) Release the MODE/M button
+5) Release the MODE button
 6) The device is now in DFU mode. 🚨
 
 ### Flashing an application via USB using `newtmgr`
@@ -186,9 +204,12 @@ this pipeline entry.
 ## Have Questions?
 
 > [!NOTE]
-> This repository and the device codebase is still under active development and is not a final release.
+> This repository serves as a reference template for building battery-free cellular IoT systems using Conexio hardware.
+The codebase is actively being developed and is intended to serve as a starting point for your own application-specific 
+implementation. It may not be production-ready and is expected to evolve as features are added and optimized.
 
-Please get in touch with Conexio engineers by sending an email to info@conexiotech.com or directly to Rajeev at rajeev@conexiotech.com .
-For more Golioth specific questions, reach out to Golioth team or post on the [Golioth Q/A forum](https://forum.golioth.io/).
+If you have questions, feedback, or need guidance on adapting this template for your project:
+* Contact the Conexio engineering team at info@conexiotech.com
+* For Golioth-specific cloud integration questions, please contact the Golioth team or post in the Golioth Community Forum.
 
 Copyright (c) 2025 Conexio Technologies, Inc.
