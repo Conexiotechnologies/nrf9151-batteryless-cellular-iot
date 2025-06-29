@@ -27,10 +27,10 @@ Golioth features implemented in basic form.
 
 ![System Setup](setup/solaris%20block%20diagram.png)
 
-
+## Internal electronics
 ![System Electronics](setup/electronis.jpg)
 
-
+## Fully assembled system
 ![System Electronics](setup/enclosure.jpg)
 
 ## Installing the nRF Connect SDK v2.9.0
@@ -121,8 +121,14 @@ This opens a new tab, asking the user to select the board for which the build co
 ```
 conexio_stratus_pro/nrf9151/ns
 ```
+or
+
+```
+conexio_stratus_pro/nrf9161/ns
+```
+
 3) Under **Extra Kconfig fragments** options, browse and select `overlay_low_power.conf`.
-4) Next, under **Extra Devicetree overlays**, browse and select `conexio_stratus_pro_nrf9151_ns.overlay`.
+4) Next, under **Extra Devicetree overlays**, browse and select respective board overlays `conexio_stratus_pro_nrf9151_ns.overlay` or `conexio_stratus_pro_nrf9161_ns.overlay`.
 5) To generate the `app_update.bin`, select **No sysbuild** under **System build (sysbuild)** option.
 6) Cick **Build Configuration** to start the Zephyr application build process.
 
@@ -204,7 +210,7 @@ this pipeline entry.
 ## Have Questions?
 
 > [!NOTE]
-> This repository serves as a reference template for building battery-free cellular IoT systems using Conexio hardware.
+> This repository serves as a reference template for building battery-free cellular IoT systems using Conexio hardware as a proof-of-concept.
 The codebase is actively being developed and is intended to serve as a starting point for your own application-specific 
 implementation. It may not be production-ready and is expected to evolve as features are added and optimized.
 
