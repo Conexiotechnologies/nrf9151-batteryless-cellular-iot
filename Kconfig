@@ -1,0 +1,73 @@
+# Copyright (c) 2025 Conexio Technologies, Inc
+# Copyright (c) 2022-2023 Golioth, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "Golioth application options"
+
+if DNS_RESOLVER
+
+config DNS_SERVER_IP_ADDRESSES
+	default y
+
+config DNS_SERVER1
+	default "1.1.1.1"
+
+endif # DNS_RESOLVER
+
+config SENSOR_SAMPLE_INTERVAL_SECONDS
+	int "Sensor sampling interval (seconds)"
+	default 60
+	help
+	  Sets the time to wait between each sensor sample.
+
+config ACCELEROMETER_SAMPLE_INTERVAL_SECONDS
+	int "LIS2DH sampling interval (seconds)"
+	default 60
+	help
+	  Sets the time to wait between each vibration sample.
+
+config LED_INDICATION_ENABLED
+	bool "Enable indicator LED"
+	default n
+
+config SHT3XD
+	bool "SHT3x Temperature and Humidity Sensor"
+	default n
+	help
+	  Enable driver for SHT3x temperature and humidity sensors.
+
+configdefault GOLIOTH_LOCATION_CELLULAR
+    default y if SOC_SERIES_NRF91X
+
+config LOCATION_TRACKING_THREAD_STACK_SIZE
+	int "Location tracking Thread Stack Size (bytes)"
+	default 2048
+	help
+	  Sets the stack size (in bytes) for the application thread of the
+	  location sampling.
+
+menuconfig LOCATION_TRACKING
+	bool "Location tracking service"
+	default y
+	help
+	  Uses GNSS or LTE, information to determine and report device
+	  location.
+
+if LOCATION_TRACKING
+
+config LOCATION_TRACKING_SAMPLE_INTERVAL_SECONDS
+	int "Location sampling interval (seconds)"
+	default 3600
+	help
+	  Sets the location sampling interval in seconds.
+
+config LOCATION_TRACKING_CELLULAR
+	bool "Use cellular method for location tracking"
+	default y
+	depends on LOCATION_METHOD_CELLULAR
+	help
+	  Disable all location tracking methods to completely disable location tracking.
+
+endif
+
+source "Kconfig.zephyr"
