@@ -1,8 +1,8 @@
-# Batteryless Cellular IoT with Conexio Stratus nRF9151
+# Batteryless Cellular IoT with Conexio Stratus nRF9151/nRF9161
 
 ## Overview
 
-The Batteryless Cellular IoT with Conexio Stratus nRF9151 firmware is based on Golioth Device Management and
+The Batteryless Cellular IoT with Conexio Stratus nRF9151/nRF9161 firmware is based on Golioth Device Management and
 Data Routing template that uses nRF Connect SDK. The application connects to Golioth, streams time-series
 data, senor readings, and cellular based location tracking to the Golioth cloud.
 From the Golioth web console you may deploy OTA firmware updates, adjust
