@@ -112,7 +112,7 @@ CONFIG_NET_SHELL=y
 
 ## Compiling the application using nRF Connect Extension
 
-Prior to compiling the golioth-acs_vibetrack application, we first need to generate the device build configuration for the project by clicking on the **Add Build Configuration** option.
+Prior to compiling the application, we first need to generate the device build configuration for the project by clicking on the **Add Build Configuration** option.
 
 This opens a new tab, asking the user to select the board for which the build configurations will be generated. In our case, we will 
 
